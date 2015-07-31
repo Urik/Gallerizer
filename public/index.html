@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="assets/scripts/jquery-1.11.3.min.js"></script>
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+		<script src="modules/RedditViewer.module.js" charset="utf-8"></script>
+		<script src="modules/RedditViewerServices.module.js" charset="utf-8"></script>
+		<script src="RedditViewerService.js"></script>
+		<script src="models/RedditImage.js" charset="utf-8"></script>
+		<script src="app.js"></script>
+
+		<link rel="stylesheet" href="/assets/app.css">
+	</head>
+	<body ng-app="RedditViewer">
+		<div ng-controller="IndexController">
+			<input type="text" name="subredditName" ng-model="subredditName">
+			<button type="button" ng-click="loadImages()">TEST</button>
+
+			<ul>
+				<li ng-repeat="image in images">
+					<img src="{{image.url}}"/>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
